@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 #include "UndirectedGraph.h"
 
 using namespace std;
@@ -25,23 +26,8 @@ int main()
         graph.addEdge(city1, city2);
     }
 
-     // Print out every adjacency list
-     cout << "------- Adjacency Lists -------\n\n";
-
-     for (const auto& g : graph.adjList) 
-     {
-        const auto& u         = g.first;
-        const auto& neighbors = g.second;
-        cout << u << ":";
-
-        for (auto const& v : neighbors) 
-        {
-            cout << " " << v ;
-        }
-
-        cout << "\n";
-        cout << "\n";
-    }
+    // Print out every adjacency list
+    graph.print();
 
     cout << "\n";
     cout << "\n";
